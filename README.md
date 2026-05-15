@@ -1,6 +1,6 @@
 # EFPL Desktop IDE 🚀
 
-**EFPL (Easy Functional Programming Language)** is a powerful, lightweight, and modern scripting environment designed for simplicity and performance. This IDE provides a complete ecosystem for writing, testing, and visualizing EFPL scripts.
+**EFPL** is a powerful, lightweight, and modern scripting environment designed for simplicity and performance. This IDE provides a complete ecosystem for writing, testing, and visualizing EFPL scripts.
 
 ![EFPL Logo](assets/app_icon.ico)
 
@@ -47,6 +47,17 @@ pip install -r requirements.txt
 # 2. Run with PyInstaller
 pyinstaller --onedir --windowed --icon "assets/app_icon.ico" main.py
 ```
+## Screen Shots
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/f4028e7c-8586-408f-8765-e07c3889367a" />
+
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/688125f8-7730-48dd-87f7-571421365ace" />
+
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/3e2c0ce6-fd63-4470-a317-2a54df09e05b" />
+
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/5adfb2b6-8785-41a0-9290-26d586bc1e53" />
+
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/e9ebb0b6-6c93-4b0f-a84b-bf75e20e7ab9" />
+
 
 ## 📜 License
 
