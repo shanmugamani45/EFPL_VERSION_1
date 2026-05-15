@@ -1,0 +1,20 @@
+class Person
+    function init(name, age)
+        set self.name to name
+        set self.age to age
+    end
+    function greet()
+        show f"Hello, my name is {self.name} and I am {self.age} years old."
+    end
+    function have_birthday()
+        set self.age to self.age + 1
+    end
+end
+
+set alice to new Person("Alice", 25)
+call alice.greet()
+call alice.have_birthday()
+call alice.greet()
+
+set bob to new Person("Bob", 30)
+call bob.greet()

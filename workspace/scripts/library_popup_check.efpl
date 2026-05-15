@@ -1,0 +1,11 @@
+# Library popup check
+# Open Library, turn ON Math, Time, and Random, then run.
+# This file intentionally does not use `use math`, `use time`, or `use random`.
+
+show "===== LIBRARY POPUP CHECK ====="
+
+show math.sqrt(64)
+show time.today()
+show random.random(1, 10)
+
+show "===== DONE ====="

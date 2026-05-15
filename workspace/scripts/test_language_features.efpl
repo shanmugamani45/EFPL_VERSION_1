@@ -1,0 +1,49 @@
+use database
+
+# Test Sets
+set my_set to {1, 2, 3, 2, 1}
+show "Set Output:"
+show my_set
+
+# Test Inheritance
+class Animal
+    function init(name)
+        set self.name to name
+    end
+
+    function speak()
+        show self.name + " makes a sound."
+    end
+end
+
+class Dog extends Animal
+    function speak()
+        show self.name + " barks!"
+    end
+
+    function fetch()
+        show self.name + " fetches the ball."
+    end
+end
+
+show "Animal Speak:"
+set my_animal to new Animal("Generic Animal")
+call my_animal.speak()
+
+show "Dog Speak and Fetch:"
+set my_dog to new Dog("Rex")
+call my_dog.speak()
+call my_dog.fetch()
+
+# Test Database
+show "Database Test:"
+set db to database.connect("test.db")
+call database.execute(db, "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)")
+call database.execute(db, "DELETE FROM users")
+call database.execute(db, "INSERT INTO users (name) VALUES (?)", ["Alice"])
+call database.execute(db, "INSERT INTO users (name) VALUES (?)", ["Bob"])
+
+set results to database.query(db, "SELECT * FROM users")
+show results
+
+call database.close(db)

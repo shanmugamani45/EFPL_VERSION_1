@@ -1,0 +1,23 @@
+# Functions, imports, returns, and recursion
+
+use text
+import "helpers.efpl"
+
+show square(5)
+show shout("import worked")
+
+function add(a, b)
+  return a + b
+end
+
+show add(10, 20)
+
+function factorial(n)
+  if n <= 1
+    return 1
+  else
+    return n * factorial(n - 1)
+  end
+end
+
+show factorial(5)

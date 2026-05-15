@@ -1,0 +1,9 @@
+# File commands write inside workspace/files
+
+use file
+
+write "EFPL file test" to file "notes.txt"
+append " complete" to file "notes.txt"
+read file "notes.txt" as content
+
+show content

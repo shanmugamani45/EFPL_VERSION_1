@@ -1,0 +1,137 @@
+# EFPL feature check program
+# Run in CLI with:
+# python -m cli.efpl_cli run workspace/scripts/feature_check.efpl --input name=Alice age=20 city=Chennai
+
+/*
+  This block comment should be ignored.
+  The program below checks new EFPL language features.
+*/
+
+take text input "Enter your name:" as name default "Guest"
+take number input "Enter your age:" as age default 18
+take text input "Enter your city:" as city default "Chennai"
+
+use text
+use math
+use random
+use time
+use type
+use array
+use file
+
+show "===== INPUT ====="
+show name
+show age
+show city
+
+show "===== STRINGS ====="
+show upper(name)
+show lower(city)
+show length(name)
+show contains(name, "a")
+show replace(name, "a", "@")
+
+show "===== MATH / TIME / TYPES ====="
+show sqrt(25)
+show math.sqrt(36)
+show round(3.14159, 2)
+show random(1, 5)
+show abs(-9)
+show min(3, 1, 2)
+show max(3, 1, 2)
+show now()
+show today()
+show to_number("123")
+show to_text(456)
+show to_boolean("true")
+show type_of(age)
+show is_number(age)
+show is_text(name)
+
+show "===== ARRAYS ====="
+set nums to [5, 2, 9, 1]
+add 7 to nums
+remove 2 from nums
+show nums
+show length(nums)
+show sort(nums)
+show reverse(nums)
+show join(nums, ", ")
+
+show "===== DICTIONARY ====="
+set person to {"name": name, "age": age, "city": city}
+show person["name"]
+show person["age"]
+set person["city"] to upper(city)
+show person["city"]
+show is_dictionary(person)
+
+show "===== IF / ELSE ====="
+if age >= 18
+  show "Adult"
+else
+  show "Minor"
+end
+
+show "===== LOOPS ====="
+for i from 1 to 5
+  if i == 3
+    continue
+  end
+  show i
+end
+
+set count to 3
+while count > 0
+  show count
+  set count to count - 1
+end
+
+set once to 1
+do
+  show once
+  set once to once - 1
+while once > 0
+
+show "===== SWITCH ====="
+switch age
+  case 18
+    show "Age is exactly 18"
+  default
+    show "Age is not exactly 18"
+end
+
+show "===== FUNCTIONS ====="
+function add(a, b)
+  set total to a + b
+  return total
+end
+
+set sum to add(10, 20)
+show sum
+
+function greet(who)
+  show "Hello"
+  show upper(who)
+end
+
+call greet(name)
+
+show "===== RECURSION ====="
+function factorial(n)
+  if n <= 1
+    return 1
+  else
+    return n * factorial(n - 1)
+  end
+end
+
+show factorial(5)
+
+show "===== FILES ====="
+write "Hello from EFPL" to file "feature_check.txt"
+append "!" to file "feature_check.txt"
+read file "feature_check.txt" as file_text
+show file_text
+
+show "===== DONE ====="

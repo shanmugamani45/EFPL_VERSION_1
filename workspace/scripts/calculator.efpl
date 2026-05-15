@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────
+#   EFPL Arithmetic Calculator
+#   Takes two numbers and shows all results
+# ─────────────────────────────────────────
+
+take input "Enter first number (a):" as a
+take input "Enter second number (b):" as b
+
+show "================================"
+show "  ARITHMETIC CALCULATOR - EFPL  "
+show "================================"
+
+# Addition
+set add_result to a + b
+show "Addition       ( a + b ) ="
+show add_result
+
+# Subtraction
+set sub_result to a - b
+show "Subtraction    ( a - b ) ="
+show sub_result
+
+# Multiplication
+set mul_result to a * b
+show "Multiplication ( a * b ) ="
+show mul_result
+
+# Division (with zero check)
+show "Division       ( a / b ) ="
+if b == 0
+  show "Error: Cannot divide by zero"
+else
+  set div_result to a / b
+  show div_result
+end
+
+# Floor Division
+show "Floor Division ( a // b ) ="
+if b == 0
+  show "Error: Cannot divide by zero"
+else
+  set fdiv_result to a // b
+  show fdiv_result
+end
+
+# Modulus (remainder)
+show "Modulus        ( a % b ) ="
+if b == 0
+  show "Error: Cannot divide by zero"
+else
+  set mod_result to a % b
+  show mod_result
+end
+
+# Power
+set pow_result to a ** b
+show "Power          ( a ** b ) ="
+show pow_result
+
+show "================================"
+show "          Done!"
+show "================================"

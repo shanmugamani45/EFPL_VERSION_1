@@ -1,0 +1,44 @@
+use http
+use json
+use os
+use math
+use text
+use array
+
+show "--- TESTING HTTP & JSON ---"
+# Using a public mock API
+set res to http.get("https://jsonplaceholder.typicode.com/todos/1")
+show "Raw JSON Response:"
+show res
+
+set data to json.parse(res)
+show f"Parsed Data Title: {data['title']}"
+
+set my_dict to {"name": "EFPL", "version": 1.4}
+show "Stringified Data:"
+show json.stringify(my_dict)
+
+show "--- TESTING OS ---"
+# Note: we use "echo Hello EFPL" to avoid platform-dependent issues
+set sys_out to os.run("echo Hello EFPL")
+show f"Command Output: {text.trim(sys_out)}"
+
+show "--- TESTING MATH ---"
+show f"Pi: {math.pi()}"
+show f"Sin(Pi/2): {math.sin(math.pi() / 2)}"
+show f"Floor(3.8): {math.floor(3.8)}"
+show f"Pow(2, 3): {math.pow(2, 3)}"
+
+show "--- TESTING TEXT ---"
+set phrase to "Hello Beautiful World"
+show f"Starts with 'Hello'? {text.starts_with(phrase, 'Hello')}"
+set words to text.split(phrase, " ")
+show f"Split words: {words}"
+
+show "--- TESTING ARRAY ---"
+show f"Contains 'Beautiful'? {array.contains(words, 'Beautiful')}"
+show f"Index of 'World': {array.index(words, 'World')}"
+set subset to array.slice(words, 0, 2)
+show f"Sliced array: {subset}"
+
+show "Done testing advanced modules!"

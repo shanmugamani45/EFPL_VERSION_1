@@ -1,0 +1,37 @@
+# EFPL Visual library check
+# Open Library and turn ON Visual, or keep the use visual line below.
+# Charts are shown in the output console.
+# Use the console Save As button if you want to keep an image.
+
+use visual
+
+set months to ["Jan", "Feb", "Mar", "Apr"]
+set sales to [10, 18, 13, 24]
+
+call visual.clear()
+call visual.figure(8, 5)
+call visual.bar(months, sales)
+call visual.title("Monthly Sales")
+call visual.xlabel("Month")
+call visual.ylabel("Sales")
+call visual.grid(true)
+show visual.render("monthly_sales.png")
+
+set x to [1, 2, 3, 4, 5]
+set y to [1, 4, 9, 16, 25]
+
+call visual.clear()
+call visual.figure(8, 5)
+call visual.line(x, y)
+call visual.title("Square Numbers")
+call visual.xlabel("Number")
+call visual.ylabel("Square")
+call visual.grid(true)
+show visual.render("square_numbers.png")
+
+call visual.clear()
+call visual.pie([40, 35, 25], ["Code", "Design", "Testing"])
+call visual.title("Project Time")
+show visual.render("project_time.png")
+
+show "Visual charts rendered"

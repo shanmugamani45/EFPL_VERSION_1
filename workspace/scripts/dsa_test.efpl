@@ -1,0 +1,40 @@
+use dsa
+
+# --- STACK TEST ---
+show "--- STACK ---"
+set s to dsa.stack()
+call dsa.push(s, 10)
+call dsa.push(s, 20)
+call dsa.push(s, 30)
+show f"Stack top is: {dsa.peek(s)}"
+show f"Popped: {dsa.pop(s)}"
+show f"Stack is empty? {dsa.is_empty(s)}"
+
+# --- QUEUE TEST ---
+show "--- QUEUE ---"
+set q to dsa.queue()
+call dsa.enqueue(q, "First")
+call dsa.enqueue(q, "Second")
+call dsa.enqueue(q, "Third")
+show f"Queue front is: {dsa.front(q)}"
+show f"Dequeued: {dsa.dequeue(q)}"
+show f"Queue is empty? {dsa.is_empty(q)}"
+
+# --- LINKED LIST TEST ---
+show "--- LINKED LIST ---"
+set ll to dsa.linkedlist()
+call dsa.append(ll, "A")
+call dsa.append(ll, "B")
+call dsa.prepend(ll, "Start")
+call dsa.append(ll, "C")
+show f"List before delete: {dsa.to_array(ll)}"
+
+call dsa.delete(ll, "B")
+show f"List after deleting 'B': {dsa.to_array(ll)}"
+
+show "Iterating through Linked List:"
+for val in dsa.to_array(ll)
+    show val
+end
+
+show "Done testing DSA!"

@@ -1,0 +1,13 @@
+# Dictionary/object style data
+
+use type
+
+set student to {"name": "Maya", "score": 92}
+
+show student["name"]
+show student["score"]
+
+set student["score"] to 95
+show student["score"]
+show type_of(student)
+show is_dictionary(student)

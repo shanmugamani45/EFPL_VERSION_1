@@ -1,0 +1,9 @@
+# Helper functions for import examples
+
+function square(x)
+  return x * x
+end
+
+function shout(text)
+  return upper(text)
+end

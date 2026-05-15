@@ -1,0 +1,13 @@
+# Array helpers
+
+use array
+
+set nums to [4, 1, 9, 2]
+add 7 to nums
+remove 1 from nums
+
+show nums
+show length(nums)
+show sort(nums)
+show reverse(nums)
+show join(nums, " | ")

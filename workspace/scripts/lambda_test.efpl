@@ -1,0 +1,7 @@
+set double to (x) => x * 2
+set sum to (a, b) => a + b
+set make_msg to (name) => f"Hello {name}!"
+
+show double(10)
+show sum(5, 7)
+show make_msg("Shanmuga")

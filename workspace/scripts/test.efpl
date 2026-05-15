@@ -1,0 +1,23 @@
+# Test script
+
+# 1. Dictionary operations
+set person to {"name": "Alice", "age": 25}
+set person["city"] to "New York"
+remove "age" from person
+show f"Person Name: {person['name']}, City: {person['city']}"
+
+# 2. Foreach and string interpolation
+set fruits to ["apple", "banana", "cherry"]
+for f in fruits
+    show f"Fruit: {f}"
+end
+
+# 3. Try / Catch
+try
+    show "Attempting to divide by zero"
+    set bad_math to 10 / 0
+catch err
+    show f"Caught an error successfully: {err}"
+end
+
+show "Done!"

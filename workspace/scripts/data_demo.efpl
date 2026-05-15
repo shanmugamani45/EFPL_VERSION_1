@@ -1,0 +1,39 @@
+use data
+
+# Load the Excel file — uploaded to workspace/data/
+load "sales.xlsx" as sales
+
+# ── Inspect ─────────────────────────────────────────────────────────────
+show shape of sales
+show columns of sales
+show head of sales
+show tail of sales
+show describe of sales
+
+# ── Clean ───────────────────────────────────────────────────────────────
+remove null from sales
+fill null in sales with 0
+
+# ── Sort ────────────────────────────────────────────────────────────────
+sort sales by "Revenue" desc
+
+# ── Filter ──────────────────────────────────────────────────────────────
+filter sales where "Revenue" > 1000 as high_sales
+
+show "High sales rows:"
+show head of high_sales
+
+# ── Select columns ──────────────────────────────────────────────────────
+select "Month" and "Revenue" from sales as slim
+
+# ── Rename ──────────────────────────────────────────────────────────────
+rename "Revenue" to "Total_Revenue" in slim
+
+# ── Render charts (each opens in a popup window) ────────────────────────
+render "Month" and "Revenue" as bar from sales
+render "Month" and "Revenue" as line from sales
+render "Revenue" as hist from sales
+render "Category" as pie from sales
+
+# ── Export cleaned data ─────────────────────────────────────────────────
+export high_sales as "clean_output.csv"
